@@ -7,7 +7,6 @@ int size;
 const int universeSize = 100;
 bool* table;
 
-int vmin,vmax;
 bool checkRangeCorrectness(int x);
 public:
 	setArr();

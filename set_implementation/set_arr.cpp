@@ -34,17 +34,17 @@ void setArr::insert(int x){
             std::cout<<"\nLiczba "<<x<<" Juz istnieje w zbiorze"<<std::endl;
         }
     }else{
-        std::cout<<"\nPodana liczba jest spoza przedziału 0-100"<<std::endl;
+        std::cout<<"\nPodana liczba jest spoza przedzialu 0-100"<<x<<std::endl;
     }  
 }
 
 void setArr::withdraw(int i){
     bool correctNumber = setArr::checkRangeCorrectness(i);
     bool is_i_exists = setArr::isInSet(i);
-    if (correctNumber == true){
+    if (correctNumber == false){
         std::cout<<"\nPodano zly numer przyjmuje numery od -99 do +99"<<std::endl;
     }
-    if (is_i_exists == '1'){
+    if (is_i_exists == true){
         table[i]=false;
     }
     else{
@@ -67,9 +67,11 @@ bool setArr::checkRangeCorrectness(int x){
     }
 }
 int main(){
-    /* SetArray Obejct*/
+    /* SetArray Object*/
     setArr set_array;
     set_array.insert(9);
+    set_array.insert(19);
+    set_array.withdraw(19);
     set_array.printSet();    
    
     return 0;
