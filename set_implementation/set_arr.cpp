@@ -1,13 +1,15 @@
 #include "setArr.h"
 
 
+
+
 setArr::setArr(){
     size=100;
     table=new bool[size];
     
     /* Ustawienie wszystkich komorek na False*/
     for(int i=0; i < size; i++){
-        table[i]=false;
+        table[i]=false; 
     }
 }
 
@@ -66,13 +68,44 @@ bool setArr::checkRangeCorrectness(int x){
         return false;
     }
 }
+
+/* Operator Dodawania*/
+setArr setArr::operator+(setArr& object){
+    for(int i=0; i < 100; i ++){
+        if((object.table[i] == true)){
+            object.table[i]==true;
+        }
+        if(setArr::isInSet(i)==true){
+            object.table[i]=true;        
+        }
+    }
+    return object;
+
+    }
+
+
+
+
 int main(){
     /* SetArray Object*/
     setArr set_array;
+    setArr set_array1;
+
     set_array.insert(9);
+    set_array.insert(8);
+    set_array.insert(10);
+
     set_array.insert(19);
+
     set_array.withdraw(19);
-    set_array.printSet();    
+    set_array.printSet();   
+
+    set_array1.insert(9);
+    set_array1.insert(10);
+
+    std::cout<<" "<<std::endl;
+    setArr set_array3 = set_array+set_array1;
+    set_array3.printSet();
    
     return 0;
 
