@@ -1,5 +1,5 @@
 # aisd2-cw
-Algorytmy I struktury danych
+Algorytmy I struktury danych II
 
 
 Struktury danych 30pkt
