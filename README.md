@@ -1,5 +1,9 @@
-# aisd2-cw
+# Algorithms and Data Structures II
 Algorytmy I struktury danych II
+
+
+1) Set Implementation 
+
 
 
 Struktury danych 30pkt
