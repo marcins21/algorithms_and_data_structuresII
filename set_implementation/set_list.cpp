@@ -42,7 +42,10 @@ void setList::withdraw(int x){
 
 /*TOOD Operators*/
     setList setList::operator+(setList& obj){
-        return obj;
+        setList res;
+        res.vec.insert(vec.begin(),obj.vec.begin(),obj.vec.end())
+        return res;
+       
     }
 
     setList setList::operator*(setList& obj){
@@ -63,13 +66,25 @@ void setList::withdraw(int x){
 int main(){
 
     setList list1;
+    setList list2;
+    setList lista3;
+
     list1.insert(10);
     list1.insert(12);
     list1.insert(13);
 
-    list1.withdraw(13);
+    list2.insert(20);
+    list2.insert(22);
+    list2.insert(23);
 
+    std::cout<<" Lista1 "<<std::endl;
     list1.printSet();
+    std::cout<<" \nLista2 "<<std::endl;
+    list2.printSet();
+
+    lista3 = list1 + list2;
+    std::cout<<" \nLista3 "<<std::endl;
+    lista3.printSet();
 
     std::cout<<"\nHello World!";
     return 0;
