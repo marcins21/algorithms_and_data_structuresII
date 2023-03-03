@@ -112,18 +112,18 @@ int main(){
 
     lista3 = list1 + list2;
     std::cout<<" \nLista3 = Lista1 + Lista2 "<<std::endl;
-    lista3.printSet(); // powinno wyświetlić: 10 12 13 20 22 23
+    lista3.printSet(); 
 
     setList lista4 = list1 * list2;
     std::cout<<" \nLista4 = Lista1 * Lista2 "<<std::endl;
-    lista4.printSet(); // powinno wyświetlić: pusty zbiór
+    lista4.printSet(); 
 
     setList lista5 = list1 - list2;
     std::cout<<" \nLista5 = Lista1 - Lista2 "<<std::endl;
-    lista5.printSet(); // powinno wyświetlić: 10 12 13
+    lista5.printSet();
 
     bool areEqual = (list1 == list2);
-    std::cout<<" \nList1 == List2: "<<areEqual<<std::endl; // powinno wyświetlić: 0
+    std::cout<<" \nList1 == List2: "<<areEqual<<std::endl; 
 
     bool isSubset = (list1 <= lista3);
     std::cout<<" \nList1 <= Lista: "<<isSubset<<std::endl;;
