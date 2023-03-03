@@ -40,13 +40,33 @@ void setList::withdraw(int x){
     }
 }
 
+/*TOOD Operators*/
+    setList setList::operator+(setList& obj){
+        return obj;
+    }
+
+    setList setList::operator*(setList& obj){
+        return obj;
+    }
+      
+    setList setList::operator-(setList& obj){
+        return obj;
+    }
+    
+    bool setList::operator==(setList& obj){
+        return true;
+    }
+    bool setList::operator<=(setList& obj){
+        return true;
+    }
+
 int main(){
 
     setList list1;
     list1.insert(10);
     list1.insert(12);
     list1.insert(13);
-    
+
     list1.withdraw(13);
 
     list1.printSet();
