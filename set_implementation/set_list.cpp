@@ -12,7 +12,7 @@ void setList::printSet(){
     }
 }
 
-void setList::insert(int x){
+void setList::insertion(int x){
     if(isInSet(x)){
         std::cout<<"\nElement "<<x<<" Already in a set"<<std::endl;
     }else{
@@ -40,52 +40,92 @@ void setList::withdraw(int x){
     }
 }
 
-/*TOOD Operators*/
-    setList setList::operator+(setList& obj){
-        setList res;
-        res.vec.insert(vec.begin(),obj.vec.begin(),obj.vec.end())
-        return res;
-       
+setList setList::operator+(setList& obj){
+    setList res = *this; 
+    for (int x : obj.vec) {
+        if (!res.isInSet(x)) { 
+            res.vec.push_back(x);
+            }
+        }
+    return res;
     }
 
-    setList setList::operator*(setList& obj){
-        return obj;
+   
+setList setList::operator-(setList& obj){
+    setList res = *this; 
+    for (int x : obj.vec) {
+        res.withdraw(x); 
     }
-      
-    setList setList::operator-(setList& obj){
-        return obj;
+    return res;
+}
+
+setList setList::operator*(setList& obj){
+    setList res;
+    for (int x : obj.vec) {
+        if (isInSet(x)) { // dodajemy tylko elementy, które są w obu setach
+            res.vec.push_back(x);
+        }
     }
-    
-    bool setList::operator==(setList& obj){
-        return true;
+    return res;
+}
+
+bool setList::operator==(setList& obj){
+    if (vec.size() != obj.vec.size()) { 
+        return false;
     }
-    bool setList::operator<=(setList& obj){
-        return true;
+    for (int x : obj.vec) {
+        if (!isInSet(x)) { 
+            return false;
+        }
     }
+    return true;
+}
+
+bool setList::operator<=(setList& obj){
+    for (int x : vec) {
+        if (!obj.isInSet(x)) { 
+            return false;
+        }
+    }
+    return true;
+}
+
 
 int main(){
-
     setList list1;
     setList list2;
     setList lista3;
 
-    list1.insert(10);
-    list1.insert(12);
-    list1.insert(13);
+    list1.insertion(10);
+    list1.insertion(12);
+    list1.insertion(13);
 
-    list2.insert(20);
-    list2.insert(22);
-    list2.insert(23);
+    list2.insertion(20);
+    list2.insertion(22);
+    list2.insertion(23);
 
-    std::cout<<" Lista1 "<<std::endl;
+    std::cout<<"\n Lista1 :"<<std::endl;
     list1.printSet();
-    std::cout<<" \nLista2 "<<std::endl;
+
+    std::cout<<"\n Lista2 : "<<std::endl;
     list2.printSet();
 
     lista3 = list1 + list2;
-    std::cout<<" \nLista3 "<<std::endl;
-    lista3.printSet();
+    std::cout<<" \nLista3 = Lista1 + Lista2 "<<std::endl;
+    lista3.printSet(); // powinno wyświetlić: 10 12 13 20 22 23
 
-    std::cout<<"\nHello World!";
+    setList lista4 = list1 * list2;
+    std::cout<<" \nLista4 = Lista1 * Lista2 "<<std::endl;
+    lista4.printSet(); // powinno wyświetlić: pusty zbiór
+
+    setList lista5 = list1 - list2;
+    std::cout<<" \nLista5 = Lista1 - Lista2 "<<std::endl;
+    lista5.printSet(); // powinno wyświetlić: 10 12 13
+
+    bool areEqual = (list1 == list2);
+    std::cout<<" \nList1 == List2: "<<areEqual<<std::endl; // powinno wyświetlić: 0
+
+    bool isSubset = (list1 <= lista3);
+    std::cout<<" \nList1 <= Lista: "<<isSubset<<std::endl;;
     return 0;
 }

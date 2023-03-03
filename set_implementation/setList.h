@@ -10,7 +10,7 @@ public:
 
     int getSize();  
     void printSet(); 
-    void insert(int x);
+    void insertion(int x);
     void withdraw(int x);
     bool isInSet(int x); 
     setList operator+(setList& obj);  
