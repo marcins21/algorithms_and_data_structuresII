@@ -31,7 +31,6 @@ class Maze:
         if h-1 >= 0:
             self.maze[h-1][w] = "w"
 
-
 # Printing Maze
 def print_maze(maze):
     maze_list = maze.get_maze()
@@ -51,8 +50,10 @@ def maze_generator(maze,height,width):
     # u-unvisited  c-cell  w-wall
     start_width = random.randint(0,width-1)
     start_height = random.randint(0,height-1)
-    #Debug info
-    print(start_width,start_height)
+
+    #DEBUG INFO
+    print(f"Cell generated {start_height,start_width}")
+
     maze.set_cell(start_height,start_width)
     maze.set_wall(start_height,start_width)
     return maze
@@ -71,6 +72,7 @@ def main():
         maze = Maze()
 
 
+    #DEBUG INFO
     print("\nMaze Correctly Initialized\n")
     print_maze(maze)
 
