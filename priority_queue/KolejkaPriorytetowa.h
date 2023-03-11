@@ -9,7 +9,7 @@ class KolejkaPriorytetowa
     public:
     void insert(int x);
     int RemoveRootElem();
-    void print();   //opcjonalnie dla wyœwietlenia kolejnych elementów macierzy, w której trzymany jest kopiec.
+    void print();   //opcjonalnie dla wyswietlenia kolejnych elementow macierzy, w ktorej trzymany jest kopiec.
     int getRootElem();
     
 };
