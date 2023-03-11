@@ -1,11 +1,11 @@
 # Algorithms and Data Structures II
 Algorytmy I struktury danych II
 
-!!) Maze Generator
 
 1) Set Implementation 
 2) Priority Queue Implementation
 
+## Maze Generator - Project I
 
 Struktury danych 30pkt
 kolokwia 40pkt
