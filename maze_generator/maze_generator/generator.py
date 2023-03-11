@@ -1,12 +1,9 @@
 import random
-from typing import List
-
 import numpy as np
-
-from exceptions import InvalidMazeSize
+from maze_generator.exceptions import InvalidMazeSize
 import logging
 import time
-from colorama import init, Fore
+from colorama import  Fore
 
 class Maze:
     def __init__(self,width:int=10,height:int=10):
@@ -23,7 +20,7 @@ class Maze:
 
     def set_cell(self,h:int,w:int):
         self.maze[h][w] = "c"
-        
+
     def set_wall(self,h:int, w:int):
         if w+1 < self.width:
             self.maze[h][w+1] = "w"
@@ -49,19 +46,15 @@ def print_maze(maze):
                 print(Fore.RED, f"{maze_list[i][j]}", end=" ")
         print()
 
-def maze_generator(maze,width,height):
+def maze_generator(maze,height,width):
     # TODO
     # u-unvisited  c-cell  w-wall
     start_width = random.randint(0,width-1)
     start_height = random.randint(0,height-1)
-
     #Debug info
     print(start_width,start_height)
-
     maze.set_cell(start_height,start_width)
     maze.set_wall(start_height,start_width)
-
-
     return maze
 
 def main():
@@ -82,7 +75,7 @@ def main():
     print_maze(maze)
 
     print(f"\nGenerated!")
-    new_maze = maze_generator(maze,maze.get_width(),maze.get_height())
+    new_maze = maze_generator(maze,maze.get_height(),maze.get_width())
     print_maze(new_maze)
 
 
