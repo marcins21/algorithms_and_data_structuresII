@@ -5,8 +5,6 @@ from exceptions import InvalidMazeSize
 import logging
 import time
 
-#u-unvisited  c-cell  w-wall
-
 # Initializing Matrix With numpy return List[list]
 def init_maze(width:int=10 , height:int=10):
     maze = [['u']*height]*width
@@ -19,10 +17,9 @@ def print_maze(maze: List[list]):
             print(maze[i][j],end=" ")
         print()
 
-
 def maze_generator(maze):
     #TODO
-    
+    # u-unvisited  c-cell  w-wall
     return maze
 
 def main():
@@ -40,12 +37,6 @@ def main():
 
     print("\nMaze Correctly Initialized\n")
     print_maze(maze)
-
-
-
-
-
-
 
 if __name__ == "__main__":
     main()
