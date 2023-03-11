@@ -11,6 +11,9 @@ def test_random_cell_creation():
     maze.set_wall(14,7)
     maze.set_cell(0,6)
     maze.set_wall(0,6)
+    #Value for Cell in a center
+    maze.set_cell(5,5)
+    maze.set_wall(5,5)
     maze_matrix = maze.get_maze()
     assert maze_matrix[14][14] == "c"
     assert maze_matrix[13][14] == "w"
@@ -21,7 +24,10 @@ def test_random_cell_creation():
     assert maze_matrix[0][5] == "w"
     assert maze_matrix[0][7] == "w"
     assert maze_matrix[1][6] == "w"
-
+    assert maze_matrix[4][5] == "w"
+    assert maze_matrix[5][6] == "w"
+    assert maze_matrix[5][4] == "w"
+    assert maze_matrix[6][5] == "w"
 
 def test_invalid_maze_user_input():
     with pytest.raises(TypeError):
