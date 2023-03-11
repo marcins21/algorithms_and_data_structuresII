@@ -5,7 +5,7 @@ from exceptions import InvalidMazeSize
 import logging
 import time
 
-# Initializing Matrix With numpy return List[list]
+# Initializing Matrix return List[list]
 def init_maze(width:int=10 , height:int=10):
     maze = [['u']*height]*width
     return maze
