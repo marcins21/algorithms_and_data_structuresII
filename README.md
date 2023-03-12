@@ -6,6 +6,9 @@ Algorytmy I struktury danych II
 2) Priority Queue Implementation
 
 ## Maze Generator - Project I
+TODO:
+* wykonać parametr - `Gęstosc` labiryntu tak aby uzytkownik mógł decydowac 
+
 Generating maze with BFS Algorithm, There is Alwayes only 1 possbile exit cell
 
 `python3 generator.py`
