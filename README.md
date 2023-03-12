@@ -6,6 +6,7 @@ Algorytmy I struktury danych II
 2) Priority Queue Implementation
 
 ## Maze Generator - Project I
+Generating maze with BFS Algorithm, There is Alwayes only 1 possbile exit cell
 ![Alter Teskt](./include/lab1.JPG)
 ![Alter Teskt](./include/lab2.JPG)
 ![Alter Teskt](./include/lab3.JPG)
