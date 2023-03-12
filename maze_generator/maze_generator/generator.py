@@ -1,6 +1,5 @@
 import random
 import numpy as np
-
 from exceptions import InvalidMazeSize
 import logging
 import time
@@ -50,6 +49,9 @@ class Maze:
                walls.append([h+1,w])
 
         # Algorytm Nie Przegląda komorek DO GÓRY - idzie tylko w dól BFS
+        # Odkomentowanie tych linijek umozliwia przeglądanie takze w górę
+        # NIE GWARANTUJE WYJSCIA Z LABIRYNTU, ale zageszcza labirynt
+
         #
         # if h-1 > 0 and w+1 < self.width:
         #     if self.maze[h-1][w+1] == "w":
@@ -65,7 +67,7 @@ class Maze:
         point_walls = self.wall_dict[(h,w)]
 
         if not point_walls:
-            print("Returning")
+            #print("Returning")
             return
 
         random_wall_choice = random.choice(point_walls)
@@ -74,6 +76,18 @@ class Maze:
     def get_starting_point(self,sh,sw):
         self.starting_height = sh
         self.starting_width = sw
+
+    def fix_finish(self):
+        index_dict = {}
+        counter=0
+        for i in range(self.width-1):
+            if self.maze[self.width-1][i] == "c":
+                counter+=1
+                index_dict[counter] = i
+                self.maze[self.width-1][i] = "w"
+
+        self.maze[self.width-1][index_dict[counter]] = "c"
+        new_finish_line = np.char.replace(''.join(self.maze[self.width-1][::]),"c","w",count=counter-1)
 
 # Printing Maze
 def print_maze(maze):
@@ -94,11 +108,12 @@ def maze_generator(maze,height,width):
     # u-unvisited  c-cell  w-wall
     start_width = random.randint(0,width-1)
     start_height = 0
-
+    store_sph = start_height
+    store_spw = start_width
     maze.get_starting_point(start_height,start_width)
 
     #DEBUG INFO
-    print(f"Cell generated {start_height,start_width}")
+    #print(f"Cell generated {start_height,start_width}")
 
     #STARTING POINT
     maze.set_cell(start_height,start_width)
@@ -107,19 +122,21 @@ def maze_generator(maze,height,width):
     next_move = maze.randomize_next_move(start_height, start_width)
 
     #iterating to maze exit
+    runs = []
     while maze.get_height()-2 >= start_height:
         maze.check_neighbors(start_height,start_width)
-
         next_move = maze.randomize_next_move(start_height, start_width)
 
         if next_move is None:
-            print("breaking")
+            #print("breaking")
             break
 
         start_height = next_move[0]
         start_width = next_move[1]
+
         maze.set_cell(next_move[0],next_move[1])
         maze.set_wall(next_move[0],next_move[1])
+        runs.append([start_height, start_width])
 
     return maze
 
@@ -137,14 +154,16 @@ def main():
         time.sleep(0.5)
         maze = Maze()
 
-    for i in range(5):
+    for i in range(15):
         #DEBUG INFO
-        print("\nMaze Correctly Initialized\n")
+        #print("\nMaze Correctly Initialized\n")
         #print_maze(maze)
 
-        print(f"\nGenerated!")
+        #print(f"\nGenerated!")
         new_maze = maze_generator(maze,maze.get_height(),maze.get_width())
-        print_maze(new_maze)
+
+    maze.fix_finish()
+    print_maze(new_maze)
 
 
 if __name__ == "__main__":
