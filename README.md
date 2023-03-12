@@ -7,7 +7,7 @@ Algorytmy I struktury danych II
 
 ## Maze Generator - Project I
 TODO:
-* wykonać parametr - `Gęstosc` labiryntu tak aby uzytkownik mógł decydowac 
+* wykonać parametr - `Gęstosc` labiryntu tak aby uzytkownik mógł decydowac o zageszczeniu labiryntu 
 
 Generating maze with BFS Algorithm, There is Alwayes only 1 possbile exit cell
 
