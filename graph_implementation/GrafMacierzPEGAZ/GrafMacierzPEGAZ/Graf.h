@@ -9,13 +9,17 @@
 
 class Graf
 {
-    //od razu musimy zadeklarowaæ maksymaln¹ iloœæ wierzcho³ków - tutaj 100;
+    
+    //od razu musimy zadeklarowaï¿½ maksymalnï¿½ iloï¿½ï¿½ wierzchoï¿½kï¿½w - tutaj 100;
+
     int matrix[100][100];
     int numberOfVertices;
 
 public:
     Graf();
-    void createVertices(int ile);    
+    void print_graph();
+    //Zawsze bedzie to 100?
+    //void createVertices(int ile);    
     void addEdge(int i_Vertex_Index_1, int i_Vertex_Index_2);    
     void removeEdge(int i_Vertex_Index_1, int i_Vertex_Index_2);
     bool checkEdge(int i_Vertex_Index_1, int i_Vertex_Index_2);
