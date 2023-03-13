@@ -143,6 +143,8 @@ def maze_generator(maze,height,width):
 def main():
     try:
         user_input = list(map(int,(input("Give Width and Height: ").split())))
+        density = int(input("Density: "))
+        mazes = int(input("How Many mazes?: "))
         if user_input[0] > 18 or user_input[1] > 18:
             raise InvalidMazeSize(user_input[0],user_input[1])
 
@@ -154,16 +156,20 @@ def main():
         time.sleep(0.5)
         maze = Maze()
 
-    for i in range(15):
-        #DEBUG INFO
-        #print("\nMaze Correctly Initialized\n")
-        #print_maze(maze)
+    for j in range(mazes):
+        maze = Maze(user_input[0], user_input[1])
+        for i in range(density):
+            #DEBUG INFO
+            #print("\nMaze Correctly Initialized\n")
+            #print_maze(maze)
 
-        #print(f"\nGenerated!")
-        new_maze = maze_generator(maze,maze.get_height(),maze.get_width())
+            #print(f"\nGenerated!")
+            new_maze = maze_generator(maze,maze.get_height(),maze.get_width())
 
-    maze.fix_finish()
-    print_maze(new_maze)
+        print(f"\nMaze Number: {j+1} !\n")
+        maze.fix_finish()
+        print_maze(new_maze)
+
 
 
 if __name__ == "__main__":
