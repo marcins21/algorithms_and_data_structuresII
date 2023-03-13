@@ -13,9 +13,9 @@ Generating maze with BFS Algorithm, There is Alwayes only 1 possbile exit cell
 
 `python3 generator.py`
 
-![Alter Teskt](./include/lab1.JPG)
+![Alter Teskt](./include/lab4.JPG)
+![Alter Teskt](./include/lab5.JPG)
 ![Alter Teskt](./include/lab2.JPG)
-![Alter Teskt](./include/lab3.JPG)
 
 
 
