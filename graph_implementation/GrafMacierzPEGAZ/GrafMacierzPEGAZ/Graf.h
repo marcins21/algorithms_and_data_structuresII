@@ -4,23 +4,14 @@
 #include <fstream>
 #include <string>
 #include <sstream>
-#include "edge.h"
-
 
 class Graf
 {
-    
-    //od razu musimy zadeklarowa� maksymaln� ilo�� wierzcho�k�w - tutaj 100;
-
     int numberOfVertices;
-    //int matrix[numberOfVertices][numberOfVertices];
     int matrix[10000][10000];
-    
 public:
-    
     Graf();
     void print_graph();
-    //Zawsze bedzie to 100?
     void  createVertices(int ile);    
     void addEdge(int i_Vertex_Index_1, int i_Vertex_Index_2);    
     void removeEdge(int i_Vertex_Index_1, int i_Vertex_Index_2);
@@ -30,7 +21,6 @@ public:
     void printNeighbourIndices(int idx);
     int getNumberOfEdges();
     void readFromFile(std::string path); 
-
 private:
     void clear();
 };

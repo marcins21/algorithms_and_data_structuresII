@@ -3,13 +3,10 @@
 #include <string>
 
 int counter = 1;
-
-// Done
 Graf::Graf(){
     std::cout<<"\n\nCreating Graph"<<counter<<std::endl;
     counter = counter +1;
 }
-
 void Graf::createVertices(int amount){
     Graf::numberOfVertices = amount;
     Graf::matrix[numberOfVertices][numberOfVertices];
@@ -22,7 +19,6 @@ void Graf::createVertices(int amount){
         }
     }
 }
-
 bool Graf::checkEdge(int i, int j){
     if(Graf::matrix[i][j]==1){
         return true;
@@ -30,8 +26,6 @@ bool Graf::checkEdge(int i, int j){
         return false;
     }
 }
-
-// Done 
 void Graf::addEdge(int i, int j){
     if (Graf::checkEdge(i,j) == false){
         Graf::matrix[i][j] = 1;
@@ -40,8 +34,6 @@ void Graf::addEdge(int i, int j){
         return;
     }
 }
-
-// Done
 void Graf::removeEdge(int i, int j){
     if(Graf::checkEdge(i,j) == true){
         Graf::matrix[i][j] = 0;
@@ -49,9 +41,6 @@ void Graf::removeEdge(int i, int j){
         std::cout<<"\n Nie mozna usunac Krawedzi "<<i<<" "<<j<<" Poniewaz nie istnieje"<<std::endl;
     }
 }
-
-
-// Done
 int Graf::vertexDegree(int idx){
     int counter=0;
 
@@ -64,9 +53,6 @@ int Graf::vertexDegree(int idx){
         }
         return counter;
     }
-
-
-// Done
 void Graf::print_graph(){
     std::cout<<"\nGraph "<<counter-1<<" Array Representation";
     for(int i=0; i < Graf::numberOfVertices; i++){
@@ -79,8 +65,6 @@ void Graf::print_graph(){
 
     }
 }
-
-// Done
 std::vector<int> Graf::getNeighbourIndices(int idx){
     std::vector<int> vec;
 
@@ -91,8 +75,6 @@ std::vector<int> Graf::getNeighbourIndices(int idx){
     }
     return vec;
 }
-
-// Done
 void Graf::printNeighbourIndices(int idx){
     std::cout<<" "<<std::endl;
     std::cout<<"Siasiedzi wierzcholka: "<<idx<<std::endl;
@@ -103,8 +85,6 @@ void Graf::printNeighbourIndices(int idx){
     }
 
 }
-
-// Done
 int Graf::getNumberOfEdges(){
     int edges[Graf::numberOfVertices];
     for(int e=0; e < Graf::numberOfVertices; e++){
@@ -123,7 +103,6 @@ int Graf::getNumberOfEdges(){
     }
     return counter;
 }
-
 void Graf::readFromFile(std::string path){
     int amount_of_verticies_int;
     int edge1, edge2;
@@ -163,13 +142,6 @@ void Graf::readFromFile(std::string path){
     //Debug Info
     //Graf::print_graph();
 }
-
-
-
-
-
-
-
 void test1()
 {
     Graf* G = new Graf();    
@@ -191,7 +163,6 @@ void test1()
     std::cout <<"\nCheck Edge "<< G->checkEdge(1, 2) << "\n\n";
       
 }
-
 void test2()
 {
     Graf* G = new Graf();
@@ -200,7 +171,6 @@ void test2()
     std::cout <<"\nNumber Of edges: "<< G->getNumberOfEdges();
     G->print_graph();
 }
-
 void test3(){
     Graf* G = new Graf();
     G->readFromFile("GrafL.txt");
@@ -211,13 +181,11 @@ void test3(){
     //G->print_graph();
 
 }
-
 int main()
 {
     test1();
     test2();
     test3();
-
     //      Mozna Odkomentowac ponizsze linie kodu, dla testu "manualnego"
 
     // Graf* G = new Graf();
