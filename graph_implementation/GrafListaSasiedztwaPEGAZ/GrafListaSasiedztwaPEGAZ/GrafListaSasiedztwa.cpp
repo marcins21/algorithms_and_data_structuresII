@@ -15,7 +15,6 @@ edge::edge(int i_Vertex_Index_1, int i_Vertex_Index_2, float i_weight)
     waga = i_weight;
 }
 
-
 int counter=0;
 Graf::Graf(){
     counter++;
@@ -26,7 +25,6 @@ Graf::Graf(){
 void Graf::createVertices(int amount){
     std::cout<<"\n?"<<std::endl;
 }
-
 
 // Done 
 void Graf::addEdge(int vertex_ind1, int vertex_ind2){
@@ -65,7 +63,6 @@ int Graf::vertexDegree(int idx){
     }
     return count;
 }
-
 
 //Done
 std::vector<int> Graf::getNeighbourIndices(int idx){
@@ -118,8 +115,6 @@ void Graf::print_vector(){
      }
     
 }
-
-
 
 // void test1()
 // {
