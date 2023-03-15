@@ -14,27 +14,18 @@ edge::edge(int i_Vertex_Index_1, int i_Vertex_Index_2, float i_weight)
     vertex_Index2 = i_Vertex_Index_2;
     waga = i_weight;
 }
-
 int counter=0;
+
 Graf::Graf(){
     counter++;
     std::cout<<"\nGraph "<<counter<<" Created\n";
 }
-
-// ?
-void Graf::createVertices(int amount){
-    std::cout<<"\n?"<<std::endl;
-}
-
-// Done 
 void Graf::addEdge(int vertex_ind1, int vertex_ind2){
     std::vector<edge> edge_vec;
     edge* vertex_edge= new edge(vertex_ind1,vertex_ind2);
     edge_vec.push_back(*vertex_edge);
     Graf::vertexList.push_back(edge_vec);
 }
-
-// Done 
 bool Graf::removeEdge(int vertex_ind1, int vertex_ind2){
 
     if(Graf::checkEdge(vertex_ind1,vertex_ind2) == 1){
@@ -44,16 +35,13 @@ bool Graf::removeEdge(int vertex_ind1, int vertex_ind2){
             Graf::vertexList.erase(it);
             std::cout<<"\nUsuwam Krawedz: "<<vertex_ind1<<" "<<vertex_ind2<<" \n";
             return true;
-
         }else{
             ++it;
-        }
+            }   
         }
     }
     return false;
 }   
-
-// Done
 int Graf::vertexDegree(int idx){
     int count = 0;
     for(auto it = Graf::vertexList.begin(); it != Graf::vertexList.end(); it++){
@@ -63,8 +51,6 @@ int Graf::vertexDegree(int idx){
     }
     return count;
 }
-
-//Done
 std::vector<int> Graf::getNeighbourIndices(int idx){
 
     std::vector<int> indices;
@@ -75,16 +61,12 @@ std::vector<int> Graf::getNeighbourIndices(int idx){
     }
     return indices;
 }
-
-//Done 
 void Graf::printNeighbourIndices(int idx){
     std::cout<<"\nNeighbour Indices of "<<idx<<": ";
     for(auto i: Graf::getNeighbourIndices(idx)){
         std::cout<<i<<" ";
     }
-}
-
-//Done 
+} 
 int Graf::getNumberOfEdges(){
     int sumUp=0;
     for(auto it = Graf::vertexList.begin(); it != Graf::vertexList.end(); it++){
@@ -94,8 +76,6 @@ int Graf::getNumberOfEdges(){
     }
     return sumUp;
 }
-
-// Done
 bool Graf::checkEdge(int vertex_ind1, int vertex_ind2){
     for(auto i : Graf::vertexList){
         if( i.data()->vertex_Index1 == vertex_ind1 && i.data()->vertex_Index2 ==vertex_ind2){
@@ -106,60 +86,106 @@ bool Graf::checkEdge(int vertex_ind1, int vertex_ind2){
     }
     return false;
 }
+void Graf::readFromFile(std::string path){
+    int amount_of_verticies_int;
+    int edge1, edge2;
+    std::string line;
+    std::ifstream file_line(path);
+    std::ifstream myfile(path);
+    int count=0;
 
-// Done 
+    //Pobranie Pierwszej liczby
+    myfile >> amount_of_verticies_int;
+    
+    //Counting Lines in a file
+    if(file_line.is_open()) 
+	{
+		while(file_line.peek()!=EOF)
+		{
+			getline(file_line, line);
+			count++;
+		}
+		file_line.close();
+        //Debug Info
+		//std::cout<<"Number of lines in the file are: "<<count<<std::endl;;
+
+    }else{
+        std::cout<<"\n Cannot Open "<<path<<" file"<<std::endl;
+    }
+    for(int i=0; i < count-1; i++){
+        myfile >> edge1 >>edge2;
+
+        //Creating Edge's
+        Graf::addEdge(edge1,edge2);
+    }
+    //Debug Info
+    //Graf::print_vector();
+}
 void Graf::print_vector(){
     std::cout<<"\nGraph:"<<std::endl;
      for(auto i : Graf::vertexList){
         std::cout<<i.data()->vertex_Index1<<" "<<i.data()->vertex_Index2<<std::endl;
      }
-    
 }
 
-// void test1()
-// {
-//     Graf* G = new Graf();    
-//     G->createVertices(10);
-//     G->addEdge(1, 2);
-//     G->addEdge(2, 3);
-//     G->addEdge(1, 5);
-//     std::cout << G->vertexDegree(1)<<"\n";
-//     std::cout << G->vertexDegree(8) << "\n";
-//     G->printNeighbourIndices(1);
-//     G->printNeighbourIndices(1);
-//     std::cout << G->checkEdge(1, 2)<<"\n";
-//     G->removeEdge(1, 2);
-//     G->printNeighbourIndices(1);
-//     std::cout << G->checkEdge(1, 2) << "\n\n\n\n\n";   
-// }
-
-// void test2()
-// {
-//     Graf* G = new Graf();
-//     G->readFromFile("C:\\Users\\tomek\\Desktop\\algorytmy�wiczenia\\week3\\Graf1.txt");
-//     G->printNeighbourIndices(1);
-//     std::cout << G->getNumberOfEdges();
-// }
-
-int main()
+void test1()
 {
-    // test1();
-    // test2();
-    Graf* G = new Graf();
+    Graf* G = new Graf();    
     G->addEdge(1, 2);
     G->addEdge(2, 3);
     G->addEdge(1, 5);
-    std::cout<<"\nChecking edge "<<G->checkEdge(1,5)<<std::endl;
-    G->print_vector(); 
-
-    G->removeEdge(1,2);
-
     G->print_vector();
-    std::cout<<"\nVertex Deggree: "<<G->vertexDegree(1);
-    
-    G->printNeighbourIndices(1);
 
-    std::cout<<"\nTotal number of edges: "<<G->getNumberOfEdges();
+    std::cout<<"\n"; 
+
+    std::cout << G->vertexDegree(1)<<"\n";
+    std::cout << G->vertexDegree(8) << "\n";
+    G->printNeighbourIndices(1);
+    G->printNeighbourIndices(1);
+    std::cout <<"\nCheck Edge "<< G->checkEdge(1, 2)<<"\n";
+    G->removeEdge(1, 2);
+    G->printNeighbourIndices(1);
+    std::cout <<"\nCheck Edge "<< G->checkEdge(1, 2) << "\n\n";
+      
+}
+void test2()
+{
+    Graf* G = new Graf();
+    G->readFromFile("GrafS.txt");
+    G->printNeighbourIndices(1);
+    std::cout <<"\nNumber Of edges: "<< G->getNumberOfEdges();
+    G->print_vector();
+}
+void test3(){
+    Graf* G = new Graf();
+    G->readFromFile("GrafL.txt");
+    G->printNeighbourIndices(1);
+    std::cout <<"\nNumber Of edges: "<< G->getNumberOfEdges();
+    //Nie zalecam :) Trwa 5 minut 
+    //G->print_graph();
+
+}
+
+int main()
+{
+    test1();
+    test2();
+    test3();
+    // Manualny test
+    // G->addEdge(1, 2);
+    // G->addEdge(2, 3);
+    // G->addEdge(1, 5);
+    // std::cout<<"\nChecking edge "<<G->checkEdge(1,5)<<std::endl;
+    // G->print_vector(); 
+
+    // G->removeEdge(1,2);
+
+    // G->print_vector();
+    // std::cout<<"\nVertex Deggree: "<<G->vertexDegree(1);
+    
+    // G->printNeighbourIndices(1);
+
+    // std::cout<<"\nTotal number of edges: "<<G->getNumberOfEdges();
 }
 
 

@@ -1,0 +1,42 @@
+PS C:\Users\msitk\Desktop\Programowanie\aisd2-cw\graph_implementation\GrafListaSasiedztwaPEGAZ\GrafListaSasiedztwaPEGAZ> .\grafLista.exe
+
+Graph 1 Created
+
+Graph:
+1 2
+2 3
+1 5
+
+2
+0
+
+Neighbour Indices of 1: 2 5
+Neighbour Indices of 1: 2 5
+Check Edge 1
+
+Usuwam Krawedz: 1 2
+
+Neighbour Indices of 1: 5
+Check Edge 0
+
+
+Graph 2 Created
+
+Neighbour Indices of 1: 2 5 11
+Number Of edges: 9
+Graph:
+1 2
+1 5
+10 1
+2 3
+5 7
+7 8
+9 12
+12 1
+1 11
+
+Graph 3 Created
+
+Neighbour Indices of 1: 4 256 71 135 893 979 383 92 652 565 982
+Number Of edges: 9940
+PS C:\Users\msitk\Desktop\Programowanie\aisd2-cw\graph_implementation\GrafListaSasiedztwaPEGAZ\GrafListaSasiedztwaPEGAZ>

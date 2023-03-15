@@ -1,0 +1,66 @@
+PS C:\Users\msitk\Desktop\Programowanie\aisd2-cw\graph_implementation\GrafMacierzPEGAZ\GrafMacierzPEGAZ> .\GrafMacierz.exe
+
+
+Creating Graph1
+
+Graph 1 Array Representation
+ 0 0 0 0 0 0 0 0 0 0
+ 0 0 1 0 0 1 0 0 0 0
+ 0 0 0 1 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0
+2
+0
+
+Siasiedzi wierzcholka: 1
+2 5
+Siasiedzi wierzcholka: 1
+2 5
+Check Edge 1
+
+Usuwam Krawedz: 1 2
+
+Siasiedzi wierzcholka: 1
+5
+Check Edge 0
+
+
+
+Creating Graph2
+
+Siasiedzi wierzcholka: 1
+2 5 11
+Number Of edges: 9
+Graph 2 Array Representation
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 1 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0
+ 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0
+ 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+Creating Graph3
+
+Siasiedzi wierzcholka: 1
+4 71 92 135 256 383 565 652 893 979 982
+Number Of edges: 9953
+PS C:\Users\msitk\Desktop\Programowanie\aisd2-cw\graph_implementation\GrafMacierzPEGAZ\GrafMacierzPEGAZ>
