@@ -15,8 +15,7 @@ class Graf
 
 
 public:
-    Graf();
-    void createVertices(int ile);    
+    Graf();  
     void addEdge(int i_Vertex_Index_1, int i_Vertex_Index_2);    
     bool removeEdge(int i_Vertex_Index_1, int i_Vertex_Index_2);
     bool checkEdge(int i_Vertex_Index_1, int i_Vertex_Index_2);
