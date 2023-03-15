@@ -1,9 +1,11 @@
 #pragma once
 #include <iostream>
-#include <vector>
 #include <fstream>
 #include <string>
+#include <cmath>
+#include <vector>
 #include <sstream>
+#include <cstdio>
 #include "edge.h"
 
 
@@ -23,5 +25,6 @@ public:
     void printNeighbourIndices(int idx);
     int getNumberOfEdges();
     void readFromFile(std::string path); 
+    void print_vector();
 };
 
