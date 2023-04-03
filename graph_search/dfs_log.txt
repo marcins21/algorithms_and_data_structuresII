@@ -1,0 +1,13 @@
+PS C:\Users\msitk\Desktop\Programowanie\aisd2-cw\graph_search> python3 dfs.py
+
+Algorytm DFS dla 1
+1 84 21 33 17 38 30 47 66 49 36
+Algorytm DFS dla 2
+2 42 86 76 9 41 63 6 32 40 44 45 91 14 31
+Algorytm DFS dla 4
+4
+Algorytm DFS dla 7
+7 10
+Algorytm DFS dla 11
+11 72 57
+PS C:\Users\msitk\Desktop\Programowanie\aisd2-cw\graph_search>

@@ -40,7 +40,9 @@ class Graph:
 def main():
     #Wczytanie pliku grapf.txt
     edges = []
-    with open("graph_search\graf.txt","r") as file:
+
+    #W vscode trzeba podmienic "graph_search\graf.txt"
+    with open("graf.txt","r") as file:
         read_content = file.readlines()
         amound_of_lines = int(read_content[0])
         for i in range(1,amound_of_lines):

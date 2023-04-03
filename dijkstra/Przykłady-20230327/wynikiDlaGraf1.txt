@@ -1,0 +1,95 @@
+
+Dystans od wierzcholka 0 do wierzcholka
+0 : 0
+1 : 3
+2 : 4
+3 : 6
+4 : 3
+5 : 5
+
+
+Sciezki do wierzcholka zrodla 0
+sciezka do zrodla od wierzcholka 0 :
+sciezka do zrodla od wierzcholka 1 :        0
+sciezka do zrodla od wierzcholka 2 :        1 0
+sciezka do zrodla od wierzcholka 3 :        5 4 0
+sciezka do zrodla od wierzcholka 4 :        0
+sciezka do zrodla od wierzcholka 5 :        4 0
+
+
+
+Dystans od wierzcholka 1 do wierzcholka
+0 : 8
+1 : 0
+2 : 1
+3 : 3
+4 : 11
+5 : 2
+
+
+Sciezki do wierzcholka zrodla 1
+sciezka do zrodla od wierzcholka 0 :        5 2 1
+sciezka do zrodla od wierzcholka 1 :
+sciezka do zrodla od wierzcholka 2 :        1
+sciezka do zrodla od wierzcholka 3 :        5 2 1
+sciezka do zrodla od wierzcholka 4 :        0 5 2 1
+sciezka do zrodla od wierzcholka 5 :        2 1
+
+
+
+Dystans od wierzcholka 2 do wierzcholka
+0 : 7
+1 : 5
+2 : 0
+3 : 2
+4 : 10
+5 : 1
+
+
+Sciezki do wierzcholka zrodla 2
+sciezka do zrodla od wierzcholka 0 :        5 2
+sciezka do zrodla od wierzcholka 1 :        3 5 2
+sciezka do zrodla od wierzcholka 2 :
+sciezka do zrodla od wierzcholka 3 :        5 2
+sciezka do zrodla od wierzcholka 4 :        0 5 2
+sciezka do zrodla od wierzcholka 5 :        2
+
+
+
+Dystans od wierzcholka 3 do wierzcholka
+0 : 11
+1 : 3
+2 : 4
+3 : 0
+4 : 14
+5 : 5
+
+
+Sciezki do wierzcholka zrodla 3
+sciezka do zrodla od wierzcholka 0 :        5 2 1 3
+sciezka do zrodla od wierzcholka 1 :        3
+sciezka do zrodla od wierzcholka 2 :        1 3
+sciezka do zrodla od wierzcholka 3 :
+sciezka do zrodla od wierzcholka 4 :        0 5 2 1 3
+sciezka do zrodla od wierzcholka 5 :        2 1 3
+
+
+
+Dystans od wierzcholka 4 do wierzcholka
+0 : 8
+1 : 6
+2 : 7
+3 : 3
+4 : 0
+5 : 2
+
+
+Sciezki do wierzcholka zrodla 4
+sciezka do zrodla od wierzcholka 0 :        5 4
+sciezka do zrodla od wierzcholka 1 :        3 5 4
+sciezka do zrodla od wierzcholka 2 :        1 3 5 4
+sciezka do zrodla od wierzcholka 3 :        5 4
+sciezka do zrodla od wierzcholka 4 :
+sciezka do zrodla od wierzcholka 5 :        4
+
+

@@ -1,0 +1,13 @@
+PS C:\Users\msitk\Desktop\Programowanie\aisd2-cw\graph_search> python3 bfs.py
+
+bfs dla 1
+1 84 36 21 66 33 49 17 30 47 38
+bfs dla 2
+2 42 45 86 91 14 44 76 31 41 9 63 6 32 40
+bfs dla 4
+4
+bfs dla 7
+7 10
+bfs dla 11
+11 72 57
+PS C:\Users\msitk\Desktop\Programowanie\aisd2-cw\graph_search>
