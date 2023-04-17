@@ -1,0 +1,66 @@
+0 3 4 6 3 5
+8 0 1 3 11 2
+7 5 0 2 10 1
+11 3 4 0 14 5
+8 6 7 3 0 2
+6 4 5 1 9 0
+
+
+
+Koszt dotarcia z wierzcholka 0 do wierzcholka
+0 wynosi 0
+1 wynosi 3
+2 wynosi 4
+3 wynosi 6
+4 wynosi 3
+5 wynosi 5
+
+Koszt dotarcia z wierzcholka 1 do wierzcholka
+0 wynosi 8
+1 wynosi 0
+2 wynosi 1
+3 wynosi 3
+4 wynosi 11
+5 wynosi 2
+
+Koszt dotarcia z wierzcholka 2 do wierzcholka
+0 wynosi 7
+1 wynosi 5
+2 wynosi 0
+3 wynosi 2
+4 wynosi 10
+5 wynosi 1
+
+Koszt dotarcia z wierzcholka 3 do wierzcholka
+0 wynosi 11
+1 wynosi 3
+2 wynosi 4
+3 wynosi 0
+4 wynosi 14
+5 wynosi 5
+
+Koszt dotarcia z wierzcholka 4 do wierzcholka
+0 wynosi 8
+1 wynosi 6
+2 wynosi 7
+3 wynosi 3
+4 wynosi 0
+5 wynosi 2
+
+Koszt dotarcia z wierzcholka 5 do wierzcholka
+0 wynosi 6
+1 wynosi 4
+2 wynosi 5
+3 wynosi 1
+4 wynosi 9
+5 wynosi 0
+
+
+
+
+Graf nie ma cykli ujemnych 1
+duration Floyd 14
+
+C:\Users\Tomek\Desktop\algo\week7\grafAlgorytmFloyda-Warshalla\x64\Debug\GrafListaSasiedztwa.exe (process 28752) exited with code 0.
+To automatically close the console when debugging stops, enable Tools->Options->Debugging->Automatically close the console when debugging stops.
+Press any key to close this window . . .

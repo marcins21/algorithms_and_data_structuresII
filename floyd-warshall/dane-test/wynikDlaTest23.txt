@@ -1,0 +1,142 @@
+0 3 1 0 -1 3 0 1 4 1
+2 0 1 0 -1 3 0 1 4 1
+5 8 0 5 4 6 5 6 9 6
+2 3 1 0 1 3 0 3 6 1
+3 4 2 1 0 4 1 2 5 2
+-1 2 0 -1 -2 0 -1 0 3 0
+2 5 3 2 1 3 0 3 6 3
+1 2 0 -1 -2 2 -1 0 3 0
+4 5 3 2 1 5 2 3 0 3
+1 2 2 1 0 2 -1 2 5 0
+
+
+
+Koszt dotarcia z wierzcholka 0 do wierzcholka
+0 wynosi 0
+1 wynosi 3
+2 wynosi 1
+3 wynosi 0
+4 wynosi -1
+5 wynosi 3
+6 wynosi 0
+7 wynosi 1
+8 wynosi 4
+9 wynosi 1
+
+Koszt dotarcia z wierzcholka 1 do wierzcholka
+0 wynosi 2
+1 wynosi 0
+2 wynosi 1
+3 wynosi 0
+4 wynosi -1
+5 wynosi 3
+6 wynosi 0
+7 wynosi 1
+8 wynosi 4
+9 wynosi 1
+
+Koszt dotarcia z wierzcholka 2 do wierzcholka
+0 wynosi 5
+1 wynosi 8
+2 wynosi 0
+3 wynosi 5
+4 wynosi 4
+5 wynosi 6
+6 wynosi 5
+7 wynosi 6
+8 wynosi 9
+9 wynosi 6
+
+Koszt dotarcia z wierzcholka 3 do wierzcholka
+0 wynosi 2
+1 wynosi 3
+2 wynosi 1
+3 wynosi 0
+4 wynosi 1
+5 wynosi 3
+6 wynosi 0
+7 wynosi 3
+8 wynosi 6
+9 wynosi 1
+
+Koszt dotarcia z wierzcholka 4 do wierzcholka
+0 wynosi 3
+1 wynosi 4
+2 wynosi 2
+3 wynosi 1
+4 wynosi 0
+5 wynosi 4
+6 wynosi 1
+7 wynosi 2
+8 wynosi 5
+9 wynosi 2
+
+Koszt dotarcia z wierzcholka 5 do wierzcholka
+0 wynosi -1
+1 wynosi 2
+2 wynosi 0
+3 wynosi -1
+4 wynosi -2
+5 wynosi 0
+6 wynosi -1
+7 wynosi 0
+8 wynosi 3
+9 wynosi 0
+
+Koszt dotarcia z wierzcholka 6 do wierzcholka
+0 wynosi 2
+1 wynosi 5
+2 wynosi 3
+3 wynosi 2
+4 wynosi 1
+5 wynosi 3
+6 wynosi 0
+7 wynosi 3
+8 wynosi 6
+9 wynosi 3
+
+Koszt dotarcia z wierzcholka 7 do wierzcholka
+0 wynosi 1
+1 wynosi 2
+2 wynosi 0
+3 wynosi -1
+4 wynosi -2
+5 wynosi 2
+6 wynosi -1
+7 wynosi 0
+8 wynosi 3
+9 wynosi 0
+
+Koszt dotarcia z wierzcholka 8 do wierzcholka
+0 wynosi 4
+1 wynosi 5
+2 wynosi 3
+3 wynosi 2
+4 wynosi 1
+5 wynosi 5
+6 wynosi 2
+7 wynosi 3
+8 wynosi 0
+9 wynosi 3
+
+Koszt dotarcia z wierzcholka 9 do wierzcholka
+0 wynosi 1
+1 wynosi 2
+2 wynosi 2
+3 wynosi 1
+4 wynosi 0
+5 wynosi 2
+6 wynosi -1
+7 wynosi 2
+8 wynosi 5
+9 wynosi 0
+
+
+
+
+Graf nie ma cykli ujemnych 1
+duration Floyd 50
+
+C:\Users\Tomek\Desktop\algo\week7\grafAlgorytmFloyda-Warshalla\x64\Debug\GrafListaSasiedztwa.exe (process 31764) exited with code 0.
+To automatically close the console when debugging stops, enable Tools->Options->Debugging->Automatically close the console when debugging stops.
+Press any key to close this window . . .
