@@ -21,7 +21,7 @@ class MatrixSet:
         if self.check_validity_of_element(element):
             if self.arr[element] == 0:
                 self.arr[element] = 1
-                print(f"\nElement '{element}' successfully added at '{element}' index")
+                #print(f"\nElement '{element}' successfully added at '{element}' index")
                 return True
             print(f"\nElement already exists in set")
             return False
@@ -31,37 +31,55 @@ class MatrixSet:
         if self.check_validity_of_element(element):
             if self.arr[element] == 1:
                 self.arr[element] = 0
-                print(f"\nElement '{element}' successfully deleted from index '{element}'")
+                #print(f"\nElement '{element}' successfully deleted from index '{element}'")
                 return True
             print(f"\nElement doesn't exists in set")
             return False
         return False
 
-        
+    def is_in_set(self,element):
+        if element in self.arr:
+            return True
+        return False
+    
+    def __add__(self,other: 'MatrixSet'):
+        if other.size < self.size:
+            size_of_smaller = other.size
+        else:
+            size_of_smaller = self.size
+
+        new_arr = [0 for i in range(size_of_smaller)]
+        for i in range(size_of_smaller):
+            if other.arr[i] == 1 or self.arr[i] == 1:
+                new_arr[i] = 1
+
+        return new_arr
 
 
 
-# • Insert - dodaje element do zbioru
-# • Withdraw – usuwa element ze zbioru
-# • isInSet - sprawdza czy dany element jest we zbiorze
-# • suma – zwraca sumę dwóch zbiorów (elementy nie duplikują się, jeśli są w obu sumowanych
-# zbiorach)
-# • część wspólna – zwraca część wspólną dwóch zbiorów (elementy które są jednocześnie w
-# jednym i w drugim zbiorze)
-# • różnica (A-B) -usuwa ze zbioru A elementy, które są także w B.
-# • równość – sprawdza czy oba zbiory zawierają dokładnie te same elementy
-# • zawieranie - sprawdza, czy zbiór B jest podzbiorem zbioru A (tzn. czy wszystkie elementy B są
-# elementami A)
+
 
 def main():
-    ms = MatrixSet(10)
-    ms.print_matrix()
-    ms.insert(9)
-    ms.insert(9)
-    ms.print_matrix()
-    ms.withdraw(9)
-    ms.withdraw(9)
-    ms.print_matrix()
+    ms1 = MatrixSet(10)
+    ms1.insert(1)
+    ms1.insert(2)
+    ms1.insert(3)
+    ms1.insert(6)
+
+    print("\nms1 Set")
+    ms1.print_matrix()
+
+
+    ms2 = MatrixSet(10)
+    ms2.insert(6)
+    ms2.insert(7)
+    ms2.insert(8)
+    print("\nms2 Set")
+    ms2.print_matrix()
+
+    print(ms1+ms2)
+
+
 
 
 main()
