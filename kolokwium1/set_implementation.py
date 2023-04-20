@@ -43,22 +43,28 @@ class MatrixSet:
         return False
     
     def __add__(self,other: 'MatrixSet'):
-        if other.size < self.size:
-            size_of_smaller = other.size
-        else:
-            size_of_smaller = self.size
-
+        size_of_smaller = min(other.size,self.size)
         new_arr = [0 for i in range(size_of_smaller)]
         for i in range(size_of_smaller):
             if other.arr[i] == 1 or self.arr[i] == 1:
                 new_arr[i] = 1
-
+        return new_arr
+    
+    def __sub__(self,other: 'MatrixSet'):
+        new_arr = [0 for k in range(self.size)]
+        for i in range(other.size):
+            if other.arr[i] != self.arr[i]:
+                new_arr[i] = 1
+        return new_arr
+    
+    def __mul__(self,other: 'MatrixSet'):
+        new_arr = [0 for i in range(self.size)]
+        for i in range(self.size):
+            if self.arr[i] == other.arr[i]:
+                new_arr[i] = 1
         return new_arr
 
-
-
-
-
+    
 def main():
     ms1 = MatrixSet(10)
     ms1.insert(1)
@@ -76,10 +82,10 @@ def main():
     ms2.insert(8)
     print("\nms2 Set")
     ms2.print_matrix()
-
-    print(ms1+ms2)
-
-
-
+    
+    print()
+    print(f"Operacja dodawania '+' --> {ms1+ms2}")
+    print(f"Operacja odejmowania '-' --> {ms1-ms2}")
+    print(f"Operacja Czesc wspolna '*' --> {ms1*ms2}")
 
 main()
