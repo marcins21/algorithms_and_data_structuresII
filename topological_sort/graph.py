@@ -62,7 +62,6 @@ class Graph:
 
 
         for i in range(self.counter,len(to_delete)):
-                
                 self.counter += 1
                 q.put(to_delete[i])
                 self.delete_edge(to_delete[i])

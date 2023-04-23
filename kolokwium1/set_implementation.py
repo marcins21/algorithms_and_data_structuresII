@@ -56,9 +56,6 @@ class MatrixSet:
         return new_arr
 
 
-
-
-
 def main():
     ms1 = MatrixSet(10)
     ms1.insert(1)
