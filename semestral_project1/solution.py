@@ -66,7 +66,6 @@ class Graph:
     def get_edge_list(self):
         return self.list_of_edges
 
-
 def reading_from_file(path):
     result = []
     with open(path,'r') as file:
@@ -87,17 +86,12 @@ def parsing_data(data:list):
     cleaned_processes = [[item.strip() for item in sublist] for sublist in proccesses]
     
     return amount_of_substancies, amount_of_processes, cleaned_processes, substancies
-
+#DFS
 def find_all_paths(graph):
-    # utworzenie pustej listy na wszystkie ścieżki
     paths = []
-    
-    # definicja funkcji DFS, która znajduje wszystkie ścieżki od wierzchołka do wierzchołka
     def dfs_paths(start, end, path=[]):
         # dodanie bieżącego wierzchołka do ścieżki
         path = path + [start]
-        
-        # warunek zakończenia: jeśli bieżący wierzchołek jest wierzchołkiem końcowym
         if start == end:
             # dodajemy aktualną ścieżkę do listy ścieżek
             path.insert(0,start)
@@ -105,17 +99,14 @@ def find_all_paths(graph):
             
         # rekurencyjnie znajdujemy wszystkie możliwe ścieżki od sąsiadujących wierzchołków
         for neighbor in graph[start]:
-            # sprawdzamy, czy sąsiadujący wierzchołek nie jest już w ścieżce (unikamy cykli)
             if neighbor not in path:
                 dfs_paths(neighbor, end, path)
-    
-    # wywołujemy funkcję dfs_paths dla każdego sąsiada wierzchołka 1
+		
+    # wywołujemy funkcję dfs_paths dla każdego sąsiada wierzchołka 1 - zloto
     for neighbor in graph[1]:
         dfs_paths(neighbor, 1)
-    
-    # zwracamy wszystkie znalezione ścieżki
+   
     return paths
-
 
 def main():
     array = defaultdict(dict)
@@ -149,14 +140,14 @@ def main():
     matrix_n = n+1
     matrix = np.full((matrix_n, matrix_n), np.inf)  # wypełnienie macierzy nieskończonościami
     np.fill_diagonal(matrix, 0) # digonale 
-
+	
     # Filling matrix with wages
-    
     for proccess in proccesses:
         matrix[proccess[0]][proccess[1]] = proccess[2]
         
     #print(matrix)
-    
+
+    #FLOYD-WARSHALL ALGORITHM
     for k in range(matrix_n):
         for i in range(matrix_n):
             for j in range(matrix_n):
@@ -169,11 +160,11 @@ def main():
         for j in range(len(matrix)):
             if matrix[i][j] != np.inf and i != j:
                 dijkstra_graph[i][j] = matrix[i][j]
-                    
-        
-    for k,v in dijkstra_graph.items():
-        #print(k,v) DEBUG INFO
-        pass
+		
+#     # DEBUG INFO          
+#     for k,v in dijkstra_graph.items():
+#         #print(k,v)
+#         pass
     
     paths = find_all_paths(dijkstra_graph)
     #print(paths)
@@ -189,7 +180,8 @@ def main():
             res += dijkstra_graph[paths[i][j]][paths[i][j+1]]
         result.append(res)
         price_of_all.append(price)
-        
+	
+    #DEBUG INFO
     #print(price_of_all)
     #print(result)
     for k in range(len(price_of_all)):
