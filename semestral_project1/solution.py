@@ -21,7 +21,6 @@ class Graph:
         self.vertex.add(node1)
         self.vertex.add(node2)
         
-
     def delete_all_edges_from_vertex(self,node1):
         #del self.list_of_edges[0]
         del self.list_of_edges[node1]
@@ -86,6 +85,7 @@ def parsing_data(data:list):
     cleaned_processes = [[item.strip() for item in sublist] for sublist in proccesses]
     
     return amount_of_substancies, amount_of_processes, cleaned_processes, substancies
+
 #DFS
 def find_all_paths(graph):
     paths = []
@@ -136,7 +136,6 @@ def main():
     for edge in proccesses:
         g.add_edge(edge[0], edge[1], edge[2])
     
-
     matrix_n = n+1
     matrix = np.full((matrix_n, matrix_n), np.inf)  # wypełnienie macierzy nieskończonościami
     np.fill_diagonal(matrix, 0) # digonale 
@@ -168,7 +167,6 @@ def main():
     
     paths = find_all_paths(dijkstra_graph)
     #print(paths)
-    
     price_of_all = []
     result = []
     for i in range(len(paths)):
