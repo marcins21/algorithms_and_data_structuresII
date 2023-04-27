@@ -21,6 +21,7 @@ class Graph:
         self.vertex.add(node1)
         self.vertex.add(node2)
         
+
     def delete_all_edges_from_vertex(self,node1):
         #del self.list_of_edges[0]
         del self.list_of_edges[node1]
@@ -65,12 +66,16 @@ class Graph:
     def get_edge_list(self):
         return self.list_of_edges
 
+
 def reading_from_file(path):
     result = []
-    with open(path,'r') as file:
-        for line in file:
-            result.append(line)
-    return result
+    try:
+        with open(path,'r') as file:
+            for line in file:
+                result.append(line)
+        return result
+    except Exception:
+        print(f"\nNie znaleziono pliku {path} podaj poprawna sciezke\nFile not Found {path} give correct path ")
 
 def parsing_data(data:list):
     amount_of_substancies = int(data[0])
@@ -86,33 +91,45 @@ def parsing_data(data:list):
     
     return amount_of_substancies, amount_of_processes, cleaned_processes, substancies
 
-#DFS
 def find_all_paths(graph,m):
+    # utworzenie pustej listy na wszystkie ścieżki
     paths = []
     def dfs_paths(start, end, path=[]):
         # dodanie bieżącego wierzchołka do ścieżki
         path = path + [start]
+        
+        # warunek zakończenia: jeśli bieżący wierzchołek jest wierzchołkiem końcowym
         if start == end:
-            # dodajemy aktualną ścieżkę do listy ścieżek
             path.insert(0,start)
-	    #zabezpiecznie na ilosc przemian
-	    if len(path) < m:
-            	paths.append(path)
-            
+        
+            #Ilosc operacji M
+            if len(path) < m:
+                paths.append(path)
+        
         # rekurencyjnie znajdujemy wszystkie możliwe ścieżki od sąsiadujących wierzchołków
         for neighbor in graph[start]:
             if neighbor not in path:
                 dfs_paths(neighbor, end, path)
-		
-    # wywołujemy funkcję dfs_paths dla każdego sąsiada wierzchołka 1 - zloto
+    
+    # wywołujemy funkcję dfs_paths dla każdego sąsiada wierzchołka 1
     for neighbor in graph[1]:
         dfs_paths(neighbor, 1)
-   
+    
+    # zwracamy wszystkie znalezione ścieżki
     return paths
 
+
 def main():
-    array = defaultdict(dict)
-    n,m,proccesses,substancies = parsing_data(reading_from_file('semestral_project1/input.txt'))
+    print("\nPodaj nazwe pliku *.txt z ktorego mam czytac dane  (umiesc ten plik w tym samym folderze co ten skrypt) \nChcesz uzyc domyslnej nazwy 'input.txt'? Kliknij [ENTER] \n")
+    user_input = input("Nazwa: ")
+    if user_input == '':
+        user_input = "input.txt"
+    try:
+     n,m,proccesses,substancies = parsing_data(reading_from_file(user_input))
+    except Exception:
+        print(f"\nCos poszlo nie tak, popatrz na informacje powyzej\nSomething went wrong check info above\n")
+        return 
+    
     parsed_processes = []
     # Printing
     print("\n----INFO----\n")
@@ -138,17 +155,18 @@ def main():
     for edge in proccesses:
         g.add_edge(edge[0], edge[1], edge[2])
     
+
     matrix_n = n+1
     matrix = np.full((matrix_n, matrix_n), np.inf)  # wypełnienie macierzy nieskończonościami
     np.fill_diagonal(matrix, 0) # digonale 
-	
+
     # Filling matrix with wages
+    
     for proccess in proccesses:
         matrix[proccess[0]][proccess[1]] = proccess[2]
         
     #print(matrix)
-
-    #FLOYD-WARSHALL ALGORITHM
+    
     for k in range(matrix_n):
         for i in range(matrix_n):
             for j in range(matrix_n):
@@ -161,14 +179,15 @@ def main():
         for j in range(len(matrix)):
             if matrix[i][j] != np.inf and i != j:
                 dijkstra_graph[i][j] = matrix[i][j]
-		
-#     # DEBUG INFO          
-#     for k,v in dijkstra_graph.items():
-#         #print(k,v)
-#         pass
+                    
+        
+    for k,v in dijkstra_graph.items():
+        #print(k,v) DEBUG INFO
+        pass
     
     paths = find_all_paths(dijkstra_graph,m)
     #print(paths)
+    
     price_of_all = []
     result = []
     for i in range(len(paths)):
@@ -180,8 +199,7 @@ def main():
             res += dijkstra_graph[paths[i][j]][paths[i][j+1]]
         result.append(res)
         price_of_all.append(price)
-	
-    #DEBUG INFO
+        
     #print(price_of_all)
     #print(result)
     for k in range(len(price_of_all)):
