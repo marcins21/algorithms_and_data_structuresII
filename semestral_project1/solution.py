@@ -95,6 +95,7 @@ def find_all_paths(graph,m):
         if start == end:
             # dodajemy aktualną ścieżkę do listy ścieżek
             path.insert(0,start)
+	    #zabezpiecznie na ilosc przemian
 	    if len(path) < m:
             	paths.append(path)
             
