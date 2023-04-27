@@ -87,7 +87,7 @@ def parsing_data(data:list):
     return amount_of_substancies, amount_of_processes, cleaned_processes, substancies
 
 #DFS
-def find_all_paths(graph):
+def find_all_paths(graph,m):
     paths = []
     def dfs_paths(start, end, path=[]):
         # dodanie bieżącego wierzchołka do ścieżki
@@ -95,7 +95,8 @@ def find_all_paths(graph):
         if start == end:
             # dodajemy aktualną ścieżkę do listy ścieżek
             path.insert(0,start)
-            paths.append(path)
+	    if len(path) < m:
+            	paths.append(path)
             
         # rekurencyjnie znajdujemy wszystkie możliwe ścieżki od sąsiadujących wierzchołków
         for neighbor in graph[start]:
@@ -165,7 +166,7 @@ def main():
 #         #print(k,v)
 #         pass
     
-    paths = find_all_paths(dijkstra_graph)
+    paths = find_all_paths(dijkstra_graph,m)
     #print(paths)
     price_of_all = []
     result = []
