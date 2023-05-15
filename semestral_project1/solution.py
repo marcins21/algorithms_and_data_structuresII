@@ -180,13 +180,15 @@ def main():
             if matrix[i][j] != np.inf and i != j:
                 dijkstra_graph[i][j] = matrix[i][j]
                     
-        
+    
+
+    print(f"\nFloydWarshal Graph - Contrustion of new graph using dijkstra algorithm")
     for k,v in dijkstra_graph.items():
-        #print(k,v) DEBUG INFO
-        pass
+        print(k,v) #DEBUG INFO
+        #pass
     
     paths = find_all_paths(dijkstra_graph,m)
-    #print(paths)
+    print(f"\nWszystkie dostepne sciezki dojscia od elemenu numer 1-złoto do elemnetu 1-złoto \n{paths}")
     
     price_of_all = []
     result = []
@@ -199,15 +201,17 @@ def main():
             res += dijkstra_graph[paths[i][j]][paths[i][j+1]]
         result.append(res)
         price_of_all.append(price)
-        
+    
+    #Debug Info
     #print(price_of_all)
     #print(result)
     for k in range(len(price_of_all)):
         result[k] += (0.5*max(price_of_all[k]))
-    #print(result)
+    print(f"\nWartosci podstawione do konkrtenych sciezek podanych powyzej z uwzglednionym cłem (+0.5*cena najdrozszego materialu) \n{result}")
             
     wynik = min(result)
     print(f"\nWYNIK {wynik} \n")
 
-   # print(dijkstra_graph)
+    #Debug Info
+    #print(dijkstra_graph)
 main()

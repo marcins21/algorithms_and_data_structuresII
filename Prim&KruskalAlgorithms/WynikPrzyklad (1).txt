@@ -1,0 +1,6 @@
+Suma wag krawędzi MST:  36
+
+Kolejność wierzchołków dodawanych do listy odwiedzonych (startując z wierzchołka o indeksie 4) w algorytmie Prima:
+4 9 6 11 0 1 7 10 12 2 3 5 8 13 14
+To samo co wyżej dla wierzchołka startowego o indeksie 11:
+11 6 0 7 1 9 12 10 5 2 3 8 13 4 14

@@ -99,7 +99,6 @@ class Graph:
         print(result)
                   
 
-        
     def BFS(self,starting):
         queue = []
         queue.append(starting)
@@ -139,10 +138,12 @@ def reading_graph_from_file(path):
         amound_of_vertecies = int(read_content[0])
         for i in range(1,counter):
             edge = read_content[i].split()
+            #int(edge[2])
             edges.append([int(edge[0]),int(edge[1])])
 
     graph = Graph(amound_of_vertecies)
     for ed in edges:
+        #ed[2]
         graph.addEdge(ed[0],ed[1])
 
     return graph
@@ -153,13 +154,13 @@ def main():
     #g.print_edges()
 
     print("BFS")
-    #g.BFS(1)
+    g.BFS(1)
     print("\nDFS")
-    #g.DFS(1)
+    g.DFS(1)
 
     print()
-    links = g.amount_of_edges_goin_in_vertex()
-    g.topological_sort(links)
-    
+    #links = g.amount_of_edges_goin_in_vertex()
+    #g.topological_sort(links)
+    #g.print_edges()
     
 main()
