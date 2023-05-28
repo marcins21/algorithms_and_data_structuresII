@@ -78,14 +78,14 @@ def reading_from_file(path):
 
 
 #graph = reading_from_file("Prim&KruskalAlgorithms/Graf_Drzewo_MST_Algorytm_PrimaGr6.txt")
-graph = reading_from_file("Prim&KruskalAlgorithms/test.txt")
+graph = reading_from_file("Prim&KruskalAlgorithms/Graf_Drzewo_MST_Algorytm_KruskalaGr6.txt")
 print(graph)
 
 
 graph.print_edges()
 print("\n\n")
-w,v = graph.prim(4)
+w,v = graph.prim(7)
 print(f"Suma wag '{w}' Kolejnosc wierzcholkow: '{v}' ")
 
-w,v = graph.prim(11)
-print(f"Suma wag '{w}' Kolejnosc wierzcholkow: '{v}' ")
+# w,v = graph.prim(11)
+# print(f"Suma wag '{w}' Kolejnosc wierzcholkow: '{v}' ")

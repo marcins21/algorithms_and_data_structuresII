@@ -201,17 +201,23 @@ def main():
             res += dijkstra_graph[paths[i][j]][paths[i][j+1]]
         result.append(res)
         price_of_all.append(price)
-    
+        
+    just_gold = 0.5*int(substancies[1][0])
     #Debug Info
     #print(price_of_all)
     #print(result)
     for k in range(len(price_of_all)):
         result[k] += (0.5*max(price_of_all[k]))
+
+
     print(f"\nWartosci podstawione do konkrtenych sciezek podanych powyzej z uwzglednionym cłem (+0.5*cena najdrozszego materialu) \n{result}")
             
     wynik = min(result)
-    print(f"\nWYNIK {wynik} \n")
-
+    if wynik < just_gold:
+        print(f"\nWYNIK {wynik} \n")
+    else:
+        print(f"\nWYNIK {just_gold} \n")
     #Debug Info
     #print(dijkstra_graph)
+
 main()
