@@ -1,0 +1,19 @@
+{
+    "connections": [
+      {
+        "name": "Server 1",
+        "host": "192.168.0.1",
+        "username": "user1",
+        "password": "password1",
+        "pem_path": "/path/to/pem/file1.pem"
+      },
+      {
+        "name": "Server 2",
+        "host": "192.168.0.2",
+        "username": "user2",
+        "password": "password2",
+        "pem_path": "/path/to/pem/file2.pem"
+      }
+    ]
+  }
+  
