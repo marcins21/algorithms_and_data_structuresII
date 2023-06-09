@@ -6,6 +6,17 @@ elementów zbioru liniowo uporządkowanego.
 Trzeba dokonać permutacji ustawiającej
 elementy w porządku rosnącym
 
+
+| algorymt                          | zlożonosc optymistyczna | złożoność pesymistyczna | złożonośc średnia |  
+|-----------------------------------|-------------------------|-------------------------|-------------------|
+| [Selection Sort](#selection-sort) | O(n^2)                  | O(n^2)                  | O(n^2)            |  
+| [Insertion Sort](#insertion-sort) | O(n)                    | O(n^2)                  | O(n^2)            |  
+| Bubble Sort                       | O(n)                    | O(n^2)                  | O(n^2)            |   
+| [Merge Sort](#merge-sort)         | O(n log n)              | O(n log n)              | O(n log n)        |   
+| [Quick Sort](#quick-sort)         | O(n log n)              | O(n^2)                  | O(n log n)        |
+| [Heap Sort](#heap-sort)           | O(n log n)              | O(n log n)              | O(n log n)        |   
+   
+
 ---
 # Stabliność sortowanie
 * Algorytm sortowania jest stabilny, gdy zachowuje kolejność elementów o tej samej wartości. Oznacza to, że jeśli mamy dwa lub więcej elementów o tej samej wartości, to po posortowaniu ich za pomocą stabilnego algorytmu sortowania, ich względna kolejność względem siebie pozostaje niezmieniona.
@@ -30,7 +41,7 @@ Aby łatwiejsze było sprawdzenie, czy dany element
 znajduje się w zbiorze
 
 ---
-## Metody sortowania:
+# Metody Sortowania:
 * Sortowanie przez selekcję (Selectionsort) [selectionsort](#selection-sort)
 * Sortowanie przez wstawianie (Insertionsort) [insertionsort](#insertion-sort)
 * Sortowanie przez zamianę (Bubblesort) 
