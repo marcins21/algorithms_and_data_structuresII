@@ -6,6 +6,20 @@ elementów zbioru liniowo uporządkowanego.
 Trzeba dokonać permutacji ustawiającej
 elementy w porządku rosnącym
 
+---
+# Stabliność sortowanie
+* Algorytm sortowania jest stabilny, gdy zachowuje kolejność elementów o tej samej wartości. Oznacza to, że jeśli mamy dwa lub więcej elementów o tej samej wartości, to po posortowaniu ich za pomocą stabilnego algorytmu sortowania, ich względna kolejność względem siebie pozostaje niezmieniona.
+
+* Na przykład, rozważmy listę osób zawierającą imię i wiek. Chcemy posortować tę listę względem wieku, ale jeśli dwie osoby mają ten sam wiek, chcemy, aby pozostały w kolejności, w jakiej zostali pierwotnie wprowadzeni.
+
+* Stabilny algorytm sortowania będzie utrzymywał tę kolejność. Jeśli zastosujemy stabilny algorytm sortowania do tej listy, to po posortowaniu osoby o tym samym wieku pozostaną w tej samej kolejności, w jakiej były pierwotnie.
+
+>Przykład:
+Mamy listę osób: [(Anna, 25), (Jan, 30), (Maria, 25), (Piotr, 30)]
+
+>Po zastosowaniu stabilnego algorytmu sortowania względem wieku, lista zostanie posortowana tak: [(Anna, 25), (Maria, 25), (Jan, 30), (Piotr, 30)]
+
+__NOTE__: Możemy zauważyć, że osoby o wieku 25 (Anna i Maria) zachowują swoją względną kolejność, nawet po posortowaniu. To właśnie cecha stabilności w algorytmie sortowania.
 
 ---
 ### Dlaczego warto sortować zbiory?
