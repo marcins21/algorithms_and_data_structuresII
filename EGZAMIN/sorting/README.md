@@ -7,6 +7,7 @@ Trzeba dokonać permutacji ustawiającej
 elementy w porządku rosnącym
 
 
+# Metody Sortowania:
 | algorymt                          | zlożonosc optymistyczna | złożoność pesymistyczna | złożonośc średnia |  
 |-----------------------------------|-------------------------|-------------------------|-------------------|
 | [Selection Sort](#selection-sort) | O(n^2)                  | O(n^2)                  | O(n^2)            |  
@@ -39,18 +40,6 @@ Aby łatwiejsze było wyszukiwanie danego elementu
 w zbiorze
 Aby łatwiejsze było sprawdzenie, czy dany element
 znajduje się w zbiorze
-
----
-# Metody Sortowania:
-* Sortowanie przez selekcję (Selectionsort) [selectionsort](#selection-sort)
-* Sortowanie przez wstawianie (Insertionsort) [insertionsort](#insertion-sort)
-* Sortowanie przez zamianę (Bubblesort) 
-* Sortowanie przez scalanie (Mergesort) [mergesort](#merge-sort)
-* Sortowanie szybkie (Quicksort) [quicksort](#quick-sort)
-* Sortowanie stogowe (Heapsort) [heapsort](#heap-sort)
-
-
-Szybki Opis algorytmów Sortowanie
 
 ---
 
