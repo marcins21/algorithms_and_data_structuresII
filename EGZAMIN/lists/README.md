@@ -29,3 +29,50 @@ wierzchołków oraz krawędzi)
 2. `Kursory:` Kursor jest komórką przechowującą wartość typu int, która służy do wskazywania elementów tablicy. Kursory są szczególnie użyteczne w kontekście tablic, gdzie elementy są przechowywane w sekwencyjnym układzie w pamięci. Kursor wskazuje na indeks elementu tablicy, umożliwiając dostęp do jego wartości. Kursory są wykorzystywane do nawigacji po tablicach, iteracji przez ich elementy i wykonywania operacji na poszczególnych elementach.
 
 >Wskaźniki i kursory są narzędziami, które umożliwiają tworzenie złożonych struktur danych i operowanie na nich w sposób efektywny i elastyczny. Ich zastosowanie zależy od konkretnego problemu i języka programowania, w którym jest implementowany program.
+
+
+### ADT LIST - reprezentacja tablicowa listy
+
+Tablicowa implementacja listy:
+
+```c
+Const int maxlength=10;
+struct list
+{
+    elementtype elements[maxlength];
+    int last; // indeks ostatniego elementu listy
+}
+int position; // indeks danego elementu listy, pozycja elementu
+```
+
+Funkcje pomocnicze:
+
+    Position END(List l): Zwraca pozycję za ostatnim elementem listy.
+    Position First(List l): Zwraca pozycję pierwszego elementu listy.
+
+Operacje na listy:
+
+    Position Next(position p, List l): Zwraca pozycję elementu następującego po elemencie o pozycji p w liście.
+    Position Previous(position p, List l): Zwraca pozycję elementu poprzedzającego element o pozycji p w liście.
+
+Operacje wyszukiwania i pobierania elementów:
+
+    Position Locate(elementtype x, List l): Zwraca pozycję elementu x w liście l. Jeśli element nie występuje w liście, zwraca END(l).
+    Elementtype Retrieve(position p, List l): Zwraca wartość elementu o pozycji p w liście l.
+
+Operacje dodawania i usuwania elementów:
+
+    bool Insert(int x, position p, List l): Wstawia element x na pozycję p w liście l. Zwraca true, jeśli operacja się powiedzie, a false w przeciwnym przypadku.
+    bool Delete(position p, List l): Usuwa element o pozycji p z listy l. Zwraca true, jeśli operacja się powiedzie, a false w przeciwnym przypadku.
+
+### Przykład działania operacji Insert:
+
+Załóżmy, mamy tablicę czteroelementową (maxlength=4) i nasza lista składa się z elementów 10, 20, 30.
+Wywołujemy procedurę Insert(50, 1, l) - chcemy wstawić element 50 na pozycję 1.
+Operacja Insert przesuwa element 30 z pozycji 2 na pozycję 3 oraz element 20 z pozycji 1 na pozycję 2, aby zrobić miejsce na element 50 na pozycji 1.
+
+### Przykład działania operacji Delete:
+
+Załóżmy, mamy tablicę czteroelementową (maxlength=4) i nasza lista składa się z elementów 10, 20, 30, 40.
+Wywołujemy procedurę Delete(1, l) - chcemy usunąć element z pozycji 1.
+Operacja Delete przesuwa element 20 z pozycji 2 na pozycję 1 oraz element 30 z pozycji 3 na pozycję 2.
