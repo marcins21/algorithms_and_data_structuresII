@@ -33,6 +33,17 @@ Mamy listę osób: [(Anna, 25), (Jan, 30), (Maria, 25), (Piotr, 30)]
 
 __NOTE__: Możemy zauważyć, że osoby o wieku 25 (Anna i Maria) zachowują swoją względną kolejność, nawet po posortowaniu. To właśnie cecha stabilności w algorytmie sortowania.
 
+`Stabilne algorytmy sortowanie:`
+* InsertionSort (przez proste wstawianie)
+* BubbleSort (przez prostą zamianę)
+* MergeSort (przez scalanie)
+* SelectionSort (przez wybieranie)
+
+`Niestabline algorytmy sortowania:`
+* QuickSort (szybkie)
+* Heapsort (stogowe)
+
+
 ---
 ### Dlaczego warto sortować zbiory?
 Sortowanie
